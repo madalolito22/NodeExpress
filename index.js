@@ -4,10 +4,14 @@ const PORT = process.env.PORT ?? 1234
 
 //Endpoint
 app.get('/', (req, res) => {
-    res.status(200).send('<h1>Bienvenido a mi página web</h1>')
+    res.status(200).send('<a href="/pokemons/darkrai"><p>Darkrai</p></a>')
 })
 
-app.get('/', get_root)
+app.get('/pokemons/darkrai', (req, res) => {
+    const pokemon = require('./pokemons/darkrai.json')
+    res.setHeader('Content-Type', 'application/json; charset=utf-8')
+    res.status(200).send(JSON.stringify(pokemon))
+})
 
 app.post('/pokemon', (req, res) => {
     let body = ''

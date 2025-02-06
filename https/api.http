@@ -1,0 +1,11 @@
+###Get ditto info
+GET http://localhost:3000/pokemons/ditto
+
+### Para crear un pokemon
+POST http://localhost:3000/pokemons
+Content-Type: application/json
+
+{ "name": "gavilan",
+"type": "ray",
+"moves": ["formtrans"]
+}
